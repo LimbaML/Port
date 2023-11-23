@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <style>
+    	body {
+    		font-family: cursive;
+            margin: 10px;
+            background-color: powderblue;
+            color: #AE445A;
+            
+
+        }
+
+        .sub-title {
+            font-size: 35px;
+            font-weight: bold;
+            color: #2F8F9D;
+            
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            color: #AE445A;
+   
+        }
+
+        .about-col-1 img {
+        	margin-top: 60px;
+            border-radius: 30px;
+            height: 400px;
+            width: 400px;
+            margin-left: 70px;
+        }
+
+        .about-col-2 {
+            flex-basis: 50%;
+            border-radius: 20px;
+            
+        }
+
+        .tab-contents {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .tab-contents p {
+            line-height: 1;
+
+        }
+
+        .active-tab {
+            display: inline-block; 
+            margin: 10px 20px;
+            font-size: 18px;
+            text-decoration: none;
+            position: relative;
+            cursor: pointer;
+            color: #713ABE;
+
+        }
+
+        .active-tab::after {
+        	content: '';
+            width: 0;
+            height: 3px;
+            background: #D3756B;
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            transition: 0.5s;
+        }
+
+        .active-tab:hover::after {
+            width: 100%;
+        }
+        h1{
+           text-shadow: 2px 2px 5px #82DBD8;
+
+        }
+        span{
+        	font-weight: bold;
+        	color: #9A208C;
+        }
+
+/* Add some responsive styles */
+@media screen and (max-width: 600px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-col-1,
+    .about-col-2 {
+        flex-basis: 100%;
+    }
+
+    .tab-contents {
+        margin-top: 16px;
+        margin-left: 10px;
+    }
+    .about-col-1 img{
+        width:300px;
+        height: 300px;
+        margin-top: 30px;
+        margin-left: 0px;
+    }
+
+}
+
+
+</style>
+</head>
+<body>
+	<div class="container">
+	<div class="about-col-1">
+		<img src="passport.jpg" >
+	</div>
+	<div class="about-col-2">		
+	<h1 class="sub-title">ABOUT ME</h1>
+	<div>
+		<p class="active-tab" onclick="toggleParagraph('title1')">Education</p>
+		<p class="active-tab"onclick="toggleParagraph('title2')">Skills</p>
+		<p class="active-tab" onclick="toggleParagraph('title3')">Internship</p>
+		
+	</div>
+    <div id="title1" class="tab-contents">
+        <p><span><strong>Christ The King Mat.Hr.School,Chennai-100.</strong></span><br><br><i>SSLC - <span style="color:#713ABE">89.5%</span></i> <br>2018 - 2019<br><br><i>HSC -<span style="color:#713ABE"> 90%</span></i><br>2020 - 2021<br><br><span><strong>St.Joseph's Institute Of Technology , OMR.</strong></span><br><br>B.E.Electronics and Communication Engineering(pursuing).<br><br><i>Cgpa - 7.9(4th sem)</i><br>2021-2025</p>
+    </div>
+
+    
+    <div id="title2" class="tab-contents">
+        <!--<p><span><strong>Soft Skills</strong></span><br><br>Leadership<br><br>Adaptability<br><br>Quick Learner<br><br>Team work<br><br>Critical thinking<br><br>Conflict resolution<br><br>Flexibility</p> -->
+        <p><span><strong>Technical Skills & Proficiencies</strong></span><br><br>C Programming<br><br>Python Basics<br><br>Java Basics<br><br>Html and Css<br><br></p>
+    </div>
+
+    
+    <div id="title3" class="tab-contents">
+        <p><span><strong>National Small Industries Corporation</strong></span><br><br><i>Internship Training on Android Application Development</i> <br>Dec 19 to 26 , 2022<br><br>Attended training on app development with java<br><br><span><strong>Indian Institute Of Information Technology , Design And Manufacturing</strong></span><br><br><i>Internship on Embedded System</i> <br>May 3 to 31 , 2023<br><br>Done project in embedded domain - Audio Video Home Entertainment System with Arduino.</p>
+    </div>
+</div>
+
+</div>
+
+    <script>
+        function toggleParagraph(titleId) {
+            // Hide all paragraphs
+            var paragraphs = document.querySelectorAll('.tab-contents');
+            paragraphs.forEach(function(paragraph) {
+                paragraph.style.display = 'none';
+            });
+
+            // Display the clicked paragraph
+            var clickedParagraph = document.getElementById(titleId);
+            clickedParagraph.style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
